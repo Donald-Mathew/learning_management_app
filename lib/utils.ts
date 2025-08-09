@@ -60,11 +60,11 @@ export const configureAssistant = (voice: string, style: string) => {
       ],
     },
 
-    //@ts-expect-error
-    clientMessages: [],
-    //
-    //@ts-expect-error
-    serverMessages: [],
+    // @ts-expect-error empty array is valid here because messages will be populated dynamically at runtime
+    clientMessages:[],
+    
+    // @ts-expect-error empty array is valid here because messages will be populated dynamically at runtime
+    serverMessages:[],
   };
   return vapiAssistant;
 };

@@ -101,7 +101,7 @@ const handleCall = async() => {
         serverMessages: [],
       }
 
-      //@ts-expect-error
+      // @ts-expect-error configureAssistant returns a valid assistant config, but type definitions are too strict for overrides
       vapi.start(configureAssistant(voice, style),assistantOverrides)
 }
 
