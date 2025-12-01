@@ -151,7 +151,7 @@ const handleDisconnect = () => {
 
                         <div className="fixed bottom-0 left-0 right-0 p-4 bg-background border-t border-border z-50">
                     <button 
-                        className={`w-full py-3 rounded-lg text-white ${callStatus === CallStatus.ACTIVE ? 'bg-red-700' : 'bg-primary'} border-2 border-white shadow-lg`}
+                        className={`w-full py-3 rounded-lg text-white ${callStatus === CallStatus.ACTIVE ? 'bg-red-700' : 'bg-gray-600'} border-2 border-white shadow-lg`}
                         onClick={callStatus === CallStatus.ACTIVE ? handleDisconnect : handleCall}
                         disabled={callStatus === CallStatus.CONNECTING}
                     >
