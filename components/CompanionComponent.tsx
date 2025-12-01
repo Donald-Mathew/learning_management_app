@@ -146,12 +146,25 @@ const handleDisconnect = () => {
                     </p>
                  </button>
                  <p className="text-red-500">STATUS: {callStatus}</p>
-                  <button className = {cn('block sm:inline-block flex-shrink-0 rounded-lg py-2 cursor-pointer transition-colors w-full text-white', callStatus === CallStatus.ACTIVE ? 'bg-red-700' : 'bg-primary', callStatus === CallStatus.CONNECTING ? 'animate-pulse': '')} onClick = {callStatus === CallStatus.ACTIVE ? handleDisconnect : handleCall}>
+                     
+                <button 
+                        className={`w-full block sm:inline-block py-2 cursor-pointer rounded-lg text-white ${callStatus === CallStatus.ACTIVE ? 'bg-red-700' : 'bg-primary'}`}
+                        onClick={callStatus === CallStatus.ACTIVE ? handleDisconnect : handleCall}
+                        disabled={callStatus === CallStatus.CONNECTING}
+                        >
+                        {callStatus === CallStatus.ACTIVE 
+                            ? "End Session" 
+                            : callStatus === CallStatus.CONNECTING
+                            ? 'Connecting...'
+                            : 'Start Session'                                                                           
+                        }
+                     </button>
+                  {/* <button className = {cn('block sm:z-50 sm:inline-block flex-shrink-0 rounded-lg py-2 cursor-pointer transition-colors w-full text-white', callStatus === CallStatus.ACTIVE ? 'bg-red-700' : 'bg-primary', callStatus === CallStatus.CONNECTING ? 'animate-pulse': '')} onClick = {callStatus === CallStatus.ACTIVE ? handleDisconnect : handleCall}>
                     {callStatus === CallStatus.ACTIVE ? "End Session" : callStatus === CallStatus.CONNECTING
                         ? 'Connecting'
                         : 'Start Session'        
             }
-                  </button>
+                  </button> */}
              </div>
         </section>
         <section className='transcript'>
