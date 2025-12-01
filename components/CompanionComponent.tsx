@@ -111,7 +111,7 @@ const handleDisconnect = () => {
 }
 
   return (
-    <section className='flex flex-col min-h-screen'>
+    <section className='flex flex-col min-h-[70vh]'>
         <section className='flex gap-8 max-sm:flex-col'>
              <div className='companion-section'>
                 <div className='companion-avatar' style={{backgroundColor:getSubjectColor(subject)}}>
@@ -145,7 +145,7 @@ const handleDisconnect = () => {
                           {isMuted ? 'Turn on Microphone' : 'Turn off microphone'}
                     </p>
                  </button>
-                  <button className = {cn('rounded-lg py-2 cursor-pointer transition-colors w-full text-white', callStatus === CallStatus.ACTIVE ? 'bg-red-700' : 'bg-primary', callStatus === CallStatus.CONNECTING && 'animate-pulse')} onClick = {callStatus === CallStatus.ACTIVE ? handleDisconnect : handleCall}>
+                  <button className = {cn('mt-6 rounded-lg py-2 cursor-pointer transition-colors w-full text-white', callStatus === CallStatus.ACTIVE ? 'bg-red-700' : 'bg-primary', callStatus === CallStatus.CONNECTING && 'animate-pulse')} onClick = {callStatus === CallStatus.ACTIVE ? handleDisconnect : handleCall}>
                     {callStatus === CallStatus.ACTIVE ? "End Session" : callStatus === CallStatus.CONNECTING
                         ? 'Connecting'
                         : 'Start Session'        
