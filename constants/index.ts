@@ -70,12 +70,4 @@ export const recentSessions = [
     duration: 25,
     color: "#C8FFDF",
   },
-  {
-    id: "6",
-    subject: "Chemistry",
-    name: "The Chemical sciences",
-    topic: "Understanding chemical characteristics",
-    duration: 20,
-    color: "#C8FFDF",
-  },
 ];
