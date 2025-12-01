@@ -111,7 +111,7 @@ const handleDisconnect = () => {
 }
 
   return (
-    <section className='flex flex-col min-h-[70vh] max-h-[90vh]'>
+    <section className='flex flex-col min-h-[70vh] max-sm:max-h-[100vh] max-h-[150vh]'>
         <section className='flex gap-8 max-sm:flex-col flex-shrink-0'>
              <div className='companion-section'>
                 <div className='companion-avatar' style={{backgroundColor:getSubjectColor(subject)}}>
@@ -145,13 +145,13 @@ const handleDisconnect = () => {
                           {isMuted ? 'Turn on Microphone' : 'Turn off microphone'}
                     </p>
                  </button>
-                 <p className="text-red-500">STATUS: {callStatus}</p>
+                 <p className="text-blue-500 sm:text-black/100">STATUS: {callStatus}</p>
              </div>
         </section>
 
-                        <div className="fixed bottom-0 left-0 right-0 p-4 bg-background border-t  z-50">
+                        <div className="max-sm:relative max-sm:top-[12px] sm:relative bottom-[-120px] left-0 right-0   z-50">
                     <button 
-                        className={`w-full block py-3 rounded-lg text-blue-500 ${callStatus === CallStatus.ACTIVE ? 'bg-red-700' : 'bg-white/100'} border-2 border-white shadow-lg`}
+                        className={`w-full cursor-pointer block p-2 rounded-lg sm:text-white text-blue-500 ${callStatus === CallStatus.ACTIVE ? 'bg-red-700' : 'bg-white sm:bg-black/100'} border-2 border-white shadow-lg`}
                         onClick={callStatus === CallStatus.ACTIVE ? handleDisconnect : handleCall}
                         disabled={callStatus === CallStatus.CONNECTING}
                     >
@@ -165,7 +165,7 @@ const handleDisconnect = () => {
                     </div>
 
 
-        <section className='transcript'>
+        <section className='transcript max-sm:mt-[-20px] mt-23'>
              <div className='transcript-message no-scrollbar'>
                   {messages.map((message, index) => {
                     if(message.role === 'assistant') {
@@ -180,7 +180,7 @@ const handleDisconnect = () => {
                             </p>
                         )
                     }else {
-                       return <p key={index} className='text-primary max-sm:text-sm'>
+                       return <p key={index} className='text-primary max-sm:text-sm sm:text-sm'>
                             {userName}: {message.content}
                         </p>
                     }
