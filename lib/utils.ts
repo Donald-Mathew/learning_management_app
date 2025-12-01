@@ -54,7 +54,7 @@ export const configureAssistant = (voice: string, style: string) => {
                     Break down the topic into smaller parts and teach the student one part at a time.
                     Keep your style of conversation {{ style }}.
                     Keep your responses short, like in a real voice conversation.
-                    Do not include any special characters in your responses - this is a voice conversation.
+                    You can include special characters in the case of learning complex concepts in mathematics engineering and sciences.
               `,
         },
       ],
