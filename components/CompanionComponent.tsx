@@ -146,7 +146,7 @@ const handleDisconnect = () => {
                     </p>
                  </button>
                  <p className="text-red-500">STATUS: {callStatus}</p>
-                  <button className = {cn('rounded-lg py-2 cursor-pointer transition-colors w-full text-white', callStatus === CallStatus.ACTIVE ? 'bg-red-700' : 'bg-primary', callStatus === CallStatus.CONNECTING && 'animate-pulse')} onClick = {callStatus === CallStatus.ACTIVE ? handleDisconnect : handleCall}>
+                  <button className = {cn('block rounded-lg py-2 cursor-pointer transition-colors w-full text-white', callStatus === CallStatus.ACTIVE ? 'bg-red-700' : 'bg-primary', callStatus === CallStatus.CONNECTING && 'animate-pulse')} onClick = {callStatus === CallStatus.ACTIVE ? handleDisconnect : handleCall}>
                     {callStatus === CallStatus.ACTIVE ? "End Session" : callStatus === CallStatus.CONNECTING
                         ? 'Connecting'
                         : 'Start Session'        
